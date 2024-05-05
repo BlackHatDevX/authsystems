@@ -38,7 +38,7 @@ router.post("/verifyOtp", async (req, res) => {
   if (packet.otp == inputOtp) {
     req.session.packet.authenticated = true;
     const writeDB = await users.create({
-      userdetails: [packet],
+      userdetails: { packet },
     });
     res.render("email/approved");
   } else {
@@ -102,7 +102,7 @@ router.get("/github/success", async (req, res) => {
   req.session.packet.username = data.login;
   req.session.packet.authenticated = true;
   const writeDB = await users.create({
-    userdetails: [data],
+    userdetails: { data },
   });
   res.render("github/success", { user: data });
 });
@@ -156,7 +156,7 @@ router.get(
 router.get("/google/success", async (req, res) => {
   const user = req.user;
   const writeDB = await users.create({
-    userdetails: [user],
+    userdetails: { user },
   });
   res.render("google/success", { user: user });
 });
