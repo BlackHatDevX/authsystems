@@ -5,6 +5,7 @@ const otpGenerator = require("otp-generator");
 const queryString = require("querystring");
 const axios = require("axios");
 const passport = require("passport");
+const users = require("./users");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 require("dotenv").config();
 
