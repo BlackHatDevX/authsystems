@@ -20,7 +20,7 @@ This project is open-source and contributions are welcome. Feel free to fork the
 - **Portfolio:** [bit.ly/jashgro](https://bit.ly/jashgro)
 - **GitHub:** [BlackHatDevX](https://github.com/BlackHatDevX)
 - **Email:** [jashgro@yandex.com](mailto:jashgro@yandex.com)
-- **Telegram:** [@developer_x](https://telegram.dog/developer_x)
+- **Telegram:** [@developer_x](https://telegram.dog/deveIoper_x)
 
 ## License
 
