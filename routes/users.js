@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+require("dotenv").config();
+const mongoose = require("mongoose");
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+mongoose.connect(process.env.MONGODB_URI);
+
+const userSchema = mongoose.Schema({
+  userdetails: Object,
 });
 
-module.exports = router;
+module.exports = mongoose.model("user", userSchema);

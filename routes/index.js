@@ -31,11 +31,14 @@ router.post("/genOtp", async (req, res) => {
   res.render("email/verifyOtp");
 });
 
-router.post("/verifyOtp", (req, res) => {
+router.post("/verifyOtp", async (req, res) => {
   const inputOtp = req.body.inputOtp;
   const packet = req.session.packet;
   if (packet.otp == inputOtp) {
     req.session.packet.authenticated = true;
+    const writeDB = await users.create({
+      userdetails: { packet },
+    });
     res.render("email/approved");
   } else {
     res.render("email/denied");
@@ -92,11 +95,14 @@ router.get("/auth/github", async (req, res) => {
   res.redirect("/github/success");
 });
 
-router.get("/github/success", (req, res) => {
+router.get("/github/success", async (req, res) => {
   const data = req.session.packet;
   req.session.destroy;
   req.session.packet.username = data.login;
   req.session.packet.authenticated = true;
+  const writeDB = await users.create({
+    userdetails: { data },
+  });
   res.render("github/success", { user: data });
 });
 //  end : login with github
@@ -146,8 +152,12 @@ router.get(
   }
 );
 
-router.get("/google/success", (req, res) => {
-  res.render("google/success", { user: req.user });
+router.get("/google/success", async (req, res) => {
+  const user = req.user;
+  const writeDB = await users.create({
+    userdetails: { user },
+  });
+  res.render("google/success", { user: user });
 });
 
 // Logout route
