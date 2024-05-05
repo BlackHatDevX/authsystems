@@ -2,7 +2,7 @@
 
 AuthSystemsV1.1 is a project that demonstrates how different authentication methods work, including email OTP method, GitHub authentication, and Google authentication.
 
-## Demo
+## Demo 
 
 Check out the live demo [here](https://authsystems.onrender.com).
 
