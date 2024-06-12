@@ -37,9 +37,9 @@ router.post("/verifyOtp", async (req, res) => {
   const packet = req.session.packet;
   if (packet.otp == inputOtp) {
     req.session.packet.authenticated = true;
-    const writeDB = await users.create({
-      userdetails: { packet },
-    });
+    // const writeDB = await users.create({
+    //   userdetails: { packet },
+    // });
     res.render("email/approved");
   } else {
     res.render("email/denied");
