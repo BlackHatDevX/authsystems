@@ -101,9 +101,9 @@ router.get("/github/success", async (req, res) => {
   req.session.destroy;
   req.session.packet.username = data.login;
   req.session.packet.authenticated = true;
-  const writeDB = await users.create({
-    userdetails: { data },
-  });
+  // const writeDB = await users.create({
+  //   userdetails: { data },
+  // });
   res.render("github/success", { user: data });
 });
 //  end : login with github
@@ -155,9 +155,9 @@ router.get(
 
 router.get("/google/success", async (req, res) => {
   const user = req.user;
-  const writeDB = await users.create({
-    userdetails: { user },
-  });
+  // const writeDB = await users.create({
+  //   userdetails: { user },
+  // });
   res.render("google/success", { user: user });
 });
 
