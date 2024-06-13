@@ -4,7 +4,10 @@ AuthSystemsV1.1 is a project that demonstrates how different authentication meth
 
 ## Demo 
 
-Check out the live demo [here](https://authsystems.onrender.com).
+Check out the live demo site [here](https://authsystems.onrender.com).
+
+[Demo](https://github.com/BlackHatDevX/authsystems/assets/91268029/4949587a-9c90-4476-ace8-0e48ce67191e)
+
 
 ## Screenshots
 ![screely-1714927156732](https://github.com/BlackHatDevX/authsystems/assets/91268029/d87a4367-aa1c-47ba-a384-c9a954fcf8b7)
